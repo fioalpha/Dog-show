@@ -1,4 +1,5 @@
 package com.fioalpha.dogshows.domain.model
 
-class Dog {
-}
+data class Dog (
+    val images: String
+)
