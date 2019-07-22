@@ -15,18 +15,18 @@ class LocalDatasourceTest {
 
     @Test
     fun `save token with success return completed`() {
-        localDatasourceTest.saveToken(User("TOKEN_TEST"))
+        localDatasourceTest.saveToken(USER_CREATE_MOCK)
             .test()
             .assertComplete()
     }
 
     @Test
     fun `get token with success return token` () {
-        localDatasourceTest.saveToken(User("TOKEN_TEST")).subscribe()
+        localDatasourceTest.saveToken(USER_CREATE_MOCK).subscribe()
         localDatasourceTest.getToken()
             .test()
             .assertComplete()
-            .assertValue(User("TOKEN_TEST"))
+            .assertValue(USER_CREATE_MOCK)
     }
 
     @Test
@@ -38,3 +38,5 @@ class LocalDatasourceTest {
     }
 
 }
+
+val USER_CREATE_MOCK = User("test@test.com", "TOKEN_TEST")
