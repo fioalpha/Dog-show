@@ -1,6 +1,5 @@
 package com.fioalpha.dogshows.data.repository
 
-import com.fioalpha.dogshows.core.network.RetrofitService
 import com.fioalpha.dogshows.core.network.ServiceNetwork
 import com.fioalpha.dogshows.data.repository.retrofitdatasource.model.DogsResponse
 import com.fioalpha.dogshows.data.repository.retrofitdatasource.model.SignupRequest

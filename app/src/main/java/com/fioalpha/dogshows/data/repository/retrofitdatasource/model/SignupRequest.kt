@@ -1,4 +1,9 @@
-package com.fioalpha.dogshows.data.repository.RetrofitDataSource.model
+package com.fioalpha.dogshows.data.repository.retrofitdatasource.model
 
-class SignupRequest {
+data class SignupRequest (
+    val email: String
+) {
+    companion object {
+        fun create(email: String) = SignupRequest(email)
+    }
 }
