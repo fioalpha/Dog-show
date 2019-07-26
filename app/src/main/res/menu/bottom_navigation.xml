@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_husly"
+          android:enabled="true"
+          android:icon="@drawable/ic_pawprint"
+          app:showAsAction="ifRoom"
+          android:title="husky"/>
+    <item android:id="@+id/menu_hound"
+          android:enabled="true"
+          android:icon="@drawable/ic_pawprint"
+          app:showAsAction="ifRoom"
+          android:title="hound"/>
+    <item android:id="@+id/menu_pug"
+          android:enabled="true"
+          android:icon="@drawable/ic_pawprint"
+          app:showAsAction="ifRoom"
+          android:title="pug"/>
+    <item android:id="@+id/menu_labrador"
+          android:enabled="true"
+          android:icon="@drawable/ic_pawprint"
+          app:showAsAction="ifRoom"
+          android:title="labrador"/>
+
+</menu>

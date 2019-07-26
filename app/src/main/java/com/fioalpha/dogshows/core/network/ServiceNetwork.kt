@@ -4,16 +4,14 @@ import com.fioalpha.dogshows.data.repository.retrofitdatasource.model.DogsRespon
 import com.fioalpha.dogshows.data.repository.retrofitdatasource.model.SignupRequest
 import com.fioalpha.dogshows.data.repository.retrofitdatasource.model.SignupResponse
 import io.reactivex.Single
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ServiceNetwork {
 
     @POST("signup")
-    fun makeSignup(signupRequest: SignupRequest): Single<SignupResponse>
+    fun makeSignup(@Body signupRequest: SignupRequest): Single<SignupResponse>
 
-    @GET("feed?category={category}")
-    fun fetchDogs(@Query("category") category: String): Single<DogsResponse>
+    @GET("feed?")
+    fun fetchDogs(@Query("category") category: String,  @Header("Authorization") header: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZGRvZy1zZXJ2aWNlIiwic3ViIjoiNWQzOTRiMDA0NzRkYWEzZDAzYjIwMDgzIiwiaWF0IjoxNTY0MDM1ODQwLCJleHAiOjE1NjUzMzE4NDB9.SXKyPjX0BOkABaCZ9IpS7W9KlKZy5opIjLfCGkTTOLU"): Single<DogsResponse>
 
 }

@@ -15,7 +15,11 @@ class IsLoggedUseCaseImpl(
     private val NOT_LOGGED = false
 
     override fun execute(): Single<Boolean> = repository.fetchToken().isEmpty
-        .flatMap { Single.just(it.not()) }
-        .onErrorResumeNext { Single.just(NOT_LOGGED) }
+        .map {
+            it.not()
+        }
+        .onErrorResumeNext {
+            Single.just(NOT_LOGGED)
+        }
 
 }

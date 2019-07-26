@@ -1,15 +1,16 @@
 package com.fioalpha.dogshows.domain
 
 import com.fioalpha.dogshows.data.repository.Repository
-import com.fioalpha.dogshows.data.repository.localdatasource.USER_CREATE_MOCK
+import com.fioalpha.dogshows.domain.model.User
 import io.mockk.every
 import io.mockk.mockk
 import io.reactivex.Maybe
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
 class IsLoggedUseCaseTest {
+
+    val USER_CREATE_MOCK = User("test@test.com", "TOKEN_TEST")
 
     private val repository: Repository = mockk()
 

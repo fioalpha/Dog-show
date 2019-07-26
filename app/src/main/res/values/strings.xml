@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DogShows</string>
+    <string name="husky_category">husky</string>
+    <string name="pug_category">pug</string>
+    <string name="hound_category">hound</string>
+    <string name="labrador_category">labrador</string>
+    <string name="dog_category_dont_found_error">Don\'t found dog category</string>
 </resources>

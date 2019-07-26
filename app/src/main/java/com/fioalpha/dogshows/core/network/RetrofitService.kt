@@ -8,14 +8,15 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.logging.Level
 
 class RetrofitService {
 
     val BASE_URL = "https://api-iddog.idwall.co/"
 
     fun retrofit(
+        gson: Gson,
         client: OkHttpClient = httpClient(),
-        gson: Gson = gson(),
         url: String = BASE_URL
     ): Retrofit {
         return Retrofit.Builder()
@@ -26,14 +27,10 @@ class RetrofitService {
             .build()
     }
 
-    private fun gson(): Gson = GsonBuilder().create()
-
     private fun httpClient(): OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor())
+        .addInterceptor(HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        })
         .build()
 
-}
-
-val networkModule = module {
-    single { RetrofitService().retrofit()}
 }
