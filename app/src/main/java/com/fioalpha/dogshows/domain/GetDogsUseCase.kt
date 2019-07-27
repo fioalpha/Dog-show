@@ -14,6 +14,8 @@ class GetDogsUseCaseImpl(
     private val repository: Repository
 ): GetDogsUseCase {
 
-    override fun execute(category: String): Single<List<Dog>> = repository.fetchDogsByCategory(category)
+    override fun execute(category: String): Single<List<Dog>> = repository.fetchToken()
+        .flatMapSingle { repository.fetchDogsByCategory(category, it) }
+
 
 }

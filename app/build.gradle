@@ -13,7 +13,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "com.fioalpha.dogshows.signup.TestAppJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -41,7 +41,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.10'
 
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
     implementation 'com.google.code.gson:gson:2.8.5'
@@ -53,7 +53,6 @@ dependencies {
     testImplementation "io.mockk:mockk:1.9.3"
     testImplementation 'junit:junit:4.12'
 
-//    androidTestImplementation "io.mockk:mockk:1.9.3"
     androidTestImplementation 'org.koin:koin-test:2.0.1'
     androidTestImplementation 'androidx.test:core:1.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'

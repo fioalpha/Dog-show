@@ -13,7 +13,7 @@ interface Repository {
 
     fun makeSignUp(email: String): Single<User>
 
-    fun fetchDogsByCategory(category: String): Single<List<Dog>>
+    fun fetchDogsByCategory(category: String, user: User): Single<List<Dog>>
 
     fun fetchToken(): Maybe<User>
 
@@ -29,7 +29,7 @@ class RepositoryImpl(
     override fun makeSignUp(email: String): Single<User> = remoteDataSource.makeSignup(email)
         .map { it.transformToDomain() }
 
-    override fun fetchDogsByCategory(category: String): Single<List<Dog>> = remoteDataSource.fetchDogImages(category)
+    override fun fetchDogsByCategory(category: String, user: User): Single<List<Dog>> = remoteDataSource.fetchDogImages(category, user)
         .map { it.transformDomain()}
 
     override fun fetchToken(): Maybe<User> = localDatasource.getToken()

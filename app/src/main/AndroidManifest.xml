@@ -16,7 +16,8 @@
 
         <uses-library android:name="android.test.runner" android:required="false" />
 
-        <activity android:name=".splash.SplashActivity">
+        <activity android:name=".splash.SplashActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
